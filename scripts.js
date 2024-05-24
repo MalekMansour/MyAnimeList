@@ -25,3 +25,19 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
+addForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+
+    const type = document.getElementById('type').value;
+    const name = document.getElementById('name').value;
+    const rating = document.getElementById('rating').value;
+    const progress = document.getElementById('progress').value;
+
+    const listItem = document.createElement('li');
+    listItem.textContent = `${type}: ${name} - Rating: ${rating} - Progress: ${progress}`;
+
+    itemList.appendChild(listItem);
+
+    addForm.reset();
+    formContainer.classList.add('hidden');
+});
