@@ -17,3 +17,14 @@ document.addEventListener('DOMContentLoaded', () => {
         { type: 'Manga', name: 'My Hero Academia' },
         { type: 'Manga', name: 'Demon Slayer' },
     ];
+
+    popularItems.forEach(item => {
+        const listItem = document.createElement('li');
+        listItem.innerHTML = `${item.type}: ${item.name} 
+            <button class="quick-add-button">Add</button>`;
+        quickAddList.appendChild(listItem);
+
+        listItem.querySelector('.quick-add-button').addEventListener('click', () => {
+            addItemToList(item.type, item.name, 0, 0); 
+        });
+    });
