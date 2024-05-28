@@ -27,7 +27,7 @@ main {
     display: none;
 }
 
-#list-container {
+#list-container, #quick-add-container {
     margin: 2em 0;
     padding: 1em;
     background-color: #fff;
@@ -48,7 +48,7 @@ li {
     align-items: center;
 }
 
-.increment-button {
+.increment-button, .quick-add-button {
     margin-left: 10px;
     padding: 0.3em;
     cursor: pointer;
@@ -58,6 +58,6 @@ li {
     border-radius: 3px;
 }
 
-.increment-button:hover {
+.increment-button:hover, .quick-add-button:hover {
     background-color: #0056b3;
 }
