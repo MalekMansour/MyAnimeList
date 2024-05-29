@@ -48,7 +48,7 @@ li {
     align-items: center;
 }
 
-.increment-button, .quick-add-button {
+.increment-button, .decrement-button, .edit-rating-button, .quick-add-button {
     margin-left: 10px;
     padding: 0.3em;
     cursor: pointer;
@@ -58,6 +58,6 @@ li {
     border-radius: 3px;
 }
 
-.increment-button:hover, .quick-add-button:hover {
+.increment-button:hover, .decrement-button:hover, .edit-rating-button:hover, .quick-add-button:hover {
     background-color: #0056b3;
 }
