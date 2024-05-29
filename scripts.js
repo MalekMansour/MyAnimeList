@@ -49,14 +49,32 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function addItemToList(type, name, rating, progress) {
         const listItem = document.createElement('li');
-        listItem.innerHTML = `${type}: ${name} - Rating: ${rating} - Progress: <span class="progress">${progress}</span>
-            <button class="increment-button">+</button>`;
+        listItem.innerHTML = `${type}: ${name} - Rating: <span class="rating">${rating}</span>
+            <button class="edit-rating-button">Edit Rating</button> - Progress: <span class="progress">${progress}</span>
+            <button class="increment-button">+</button><button class="decrement-button">-</button>`;
 
         itemList.appendChild(listItem);
 
         listItem.querySelector('.increment-button').addEventListener('click', () => {
             const progressElement = listItem.querySelector('.progress');
             progressElement.textContent = parseInt(progressElement.textContent) + 1;
+        });
+
+        listItem.querySelector('.decrement-button').addEventListener('click', () => {
+            const progressElement = listItem.querySelector('.progress');
+            if (parseInt(progressElement.textContent) > 0) {
+                progressElement.textContent = parseInt(progressElement.textContent) - 1;
+            }
+        });
+
+        listItem.querySelector('.edit-rating-button').addEventListener('click', () => {
+            const ratingElement = listItem.querySelector('.rating');
+            const newRating = prompt('Enter new rating:', ratingElement.textContent);
+            if (newRating !== null && !isNaN(newRating) && newRating >= 0 && newRating <= 10) {
+                ratingElement.textContent = newRating;
+            } else {
+                alert('Please enter a valid rating between 0 and 10.');
+            }
         });
     }
 });
